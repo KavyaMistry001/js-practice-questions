@@ -10,7 +10,7 @@ function throttle(callback, delay) {
     };
   }
     function sayHello() {
-    console.log("Hello!");
+    console.log("Hello kavya here");
   }
   const throttledSayHello = throttle(sayHello, 2000);
   throttledSayHello(); 
