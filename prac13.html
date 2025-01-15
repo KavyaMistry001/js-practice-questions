@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Toggle Class Example</title>
   <style>
-    .active {
-      color: white;
-      background-color: blue;
+    .highlight {
+      background-color: yellow;
+      color: black;
     }
   </style>
 </head>
 <body>
-  <p id="myElement">Click the button to toggle the "active" class on me!</p>
-  <button id="toggleClassButton">Toggle Class</button>
+<p id="text">Click the button to highlight</p>
+<button onclick="togglehighlight()">Click</button>
 
-  <script>
-    // Get the paragraph and button elements
-    const element = document.getElementById("myElement");
-    const button = document.getElementById("toggleClassButton");
+<script>
+  function togglehighlight() {
+    let text = document.getElementById("text"); 
+    text.classList.toggle("highlight"); 
+  }
+</script>
 
-    // Add a click event listener to the button
-    button.addEventListener("click", function () {
-      element.classList.toggle("active"); // Toggles the "active" class
-    });
-  </script>
 </body>
 </html>
