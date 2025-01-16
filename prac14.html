@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+    .delete-btn {
+      margin-left: 10px;
+      color: red;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>To-Do List App where items can be added and removed</h1>
+  <input type="text" id="taskInput" placeholder="Enter a new task">
+  <button onclick="addTask()">Add Task</button>
+
+  <ul id="taskList"></ul>
+  <script>
+    function addTask() {
+      // input value
+      let taskInput = document.getElementById("taskInput");
+      let taskText = taskInput.value;
+// if there is a input or not
+      if (taskText === "") {
+        alert("Please enter a task");
+        return;
+      }
+      // new list
+      let li = document.createElement("li");
+      li.textContent = taskText;
+
+  // delete button
+      let deleteBtn = document.createElement("span");
+      deleteBtn.textContent = "Delete";
+      deleteBtn.className = "delete-btn";
+      deleteBtn.onclick = function () {
+        li.remove(); // remove task when delete button is clicked
+      };
+      li.appendChild(deleteBtn);
+      // add to the task list
+      document.getElementById("taskList").appendChild(li);
+      // now clear the input field
+      taskInput.value = ""; 
+    }
+  </script>
+</body>
+</html>
